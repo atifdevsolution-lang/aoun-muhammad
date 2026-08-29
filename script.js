@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectsContainer = document.getElementById("projectsContainer");
 
   // Projects Data Array
-  const projects = [
+  const defaultProjects = [
     {
       number: "01",
       title: "Sales Data Dashboard",
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       link: "#"
     }
   ];
+  const projects = JSON.parse(localStorage.getItem("aounProjects") || "null") || defaultProjects;
 
   // Render Projects to HTML
   if (projectsContainer) {
